@@ -14,22 +14,45 @@
 // xem có cần thu hoạch không
 // }
 // xem trong kho có bao nhiêu => tính tiền
-var array = [1,2,3,4,5,6,7,8,9,10];
-var kho = 0;
-var a = null;
-var b = null;
-var answer = null;
-for(var c = 0; c < 24; c++) {
-    for (var i = 0; i < 10; i++){
-        a = array[i]*1.2;
-        if (a >= 50){
-            b = a-50;
-            kho += b;
-            array[i] = 10;
-        }
-        else{
-            array[i] = a;
+//cach 1:
+// var array = [1,2,3,4,5,6,7,8,9,10];
+// var kho = 0;
+// var a = null;
+// var b = null;
+// var answer = null;
+// for(var c = 0; c < 24; c++) {
+//     for (var i = 0; i < 10; i++){
+//         a = array[i]*1.2;
+//         if (a >= 50){
+//             b = a-50;
+//             kho += b;
+//             array[i] = 10;
+//         }
+//         else{
+//             array[i] = a;
+//         }
+//     }
+// }
+// console.log(answer);
+//cach 2
+var sheeps = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var storage = 0;
+for (let j = 0; j < 24; j++) {
+    // 1 thang 
+    for (let i = 0; i < sheeps.length; i++) {
+        // sheep grow
+        sheeps[i] = sheeps[i] * 1.2;
+
+        // sheer if need
+        if (sheeps[i] >= 50) {
+            storage += sheeps[i] - 10;
+            sheeps[i] = 10;
         }
     }
 }
-console.log(answer);
+console.log(storage * 100000);
+
+// var
+// hoisting
+
+
